@@ -1,0 +1,288 @@
+/* Reset & Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Layout Structure */
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 60px;
+  background-color: #ffffff; /* changed from #2c2f48 */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.sidebar-icons {
+  display: flex;
+  flex-direction: column; /* ensures vertical alignment */
+  align-items: center;
+  gap: 20px;
+}
+
+.sidebar-icons .icon {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0); /* dark icon on white bg */
+  transition: transform 0.2s ease;
+}
+
+.sidebar-icons .icon:hover {
+  transform: scale(1.1);
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  display: flex;
+  background-color: #f4f4f9;
+  padding: 20px;
+}
+
+/* Template Sidebar */
+.template-sidebar {
+  width: 250px;
+  background-color: #E3E3E3;
+  border-radius: 10px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.sidebar-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+
+.template-list {
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.template-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.template-list::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 10px;
+}
+
+/* Editor Container */
+.editor-container {
+  flex: 1;
+  margin-left: 20px;
+  background-color: #E3E3E3;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.editor-header h2 {
+  font-size: 22px;
+  color: #333;
+}
+
+.editor-header button {
+  margin-left: 10px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+.resume-btn {
+  background-color: #4caf50;
+}
+
+.resume-btn:hover {
+  background-color: #45a049;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Drop Zone */
+.drop-zone {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  
+  background-color: white;
+  border: 2px dashed #999;
+  border-radius: 10px;
+}
+
+.drop-zone::-webkit-scrollbar {
+  width: 6px;
+}
+
+.drop-zone::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 10px;
+}
+
+.template-search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 15px;
+  margin-bottom: 10px;
+
+  background-color: #ECECEC;
+  border-radius: 8px;
+  color: #151515;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.template-search img {
+  width: 20px;
+  height: 20px;
+}
+
+
+.template-card {
+  background-color: #ECECEC;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  color: #151515;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+
+  text-align: center;           /* center text */
+  display: flex;                /* center using flex */
+  justify-content: center;     /* horizontal center */
+  align-items: center;         /* vertical center */
+}
+
+
+
+.template-card:hover {
+  background-color: #5b6285;
+}
+
+.template-card.dropped {
+  background-color: #ECECEC;
+  color: black;
+  width: 50%;                     /* Half width */
+  display: flex;                  /* Enable flex */
+  flex-direction: column;         /* Stack content vertically */
+  align-items: flex-start;        /* Align text to the left */
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+
+.template-content {
+  margin-top: 6px;
+  font-size: 14px;
+  color: black;
+  text-align: left; /* Optional but explicit */
+}
+
+
+/* Footer */
+.editor-footer {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.editor-footer button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+.referral-btn {
+  background-color: #00bcd4;
+}
+
+.referral-btn:hover {
+  background-color: #0097a7;
+}
+
+.save-btn {
+  background-color: #3f51b5;
+}
+
+.save-btn:hover {
+  background-color: #303f9f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .main-content {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .template-sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .editor-container {
+    margin-left: 0;
+  }
+
+  .editor-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
